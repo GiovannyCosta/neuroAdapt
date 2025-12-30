@@ -1,0 +1,105 @@
+/* ===== global ===== */
+/* IMPORTANTE:
+   Poppins para títulos/interface
+   Roboto como fallback seguro  
+*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Roboto:wght@400;500&display=swap');
+
+/* =========================================
+   2. VARIÁVEIS (DESIGN TOKENS)
+========================================= */
+:root {
+    /* Tipografia */
+    --font-main: 'Poppins', 'Helvetica', Arial, sans-serif;
+    --font-body: 'Roboto', sans-serif;
+
+    /* Paleta Base (Modo Dark Padrão) */
+    --bg-ink-black: #091016;
+    /* Fundo Principal */
+    --bg-glass: rgba(9, 16, 22, 0.7);
+    /* Para o efeito de vidro no header */
+    --bg-white: #f0f4ef;
+
+    --text-white: #f0f4ef;
+    --text-black: #000000;
+    --text-metal: #94a3b8;
+    /* Ajustei levemente para melhor contraste no dark */
+
+    /* Tons Pastéis (Modo Calmo/Foco) */
+    --calm-primary: #81D4FA;
+    --calm-secondary: #B2DFDB;
+
+    /* Cores Vibrantes (Modo Estímulo) */
+    --stimulant-primary: #FF9800;
+    --stimulant-secondary: #FFEB3B;
+    --stimulant-accent: #F44336;
+
+    /* Dimensões e Layout */
+    --border-radius-sm: 8px;
+    --border-radius-lg: 16px;
+    --header-height: 90px;
+    --container-width: 1280px;
+    /* Defini um padrão seguro para desktop */
+}
+
+/* =========================================
+   3. RESET & CONFIGURAÇÕES BASE
+========================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+
+}
+
+body {
+    background-color: var(--bg-ink-black);
+    color: var(--text-white);
+    font-family: var(--font-main);
+    line-height: 1.6;
+    overflow-x: hidden;
+    /* Evita rolagem horizontal indesejada */
+}
+
+/* =========================================
+   4. ACESSIBILIDADE E FOCO (CRÍTICO)
+========================================= */
+:focus-visible {
+    outline: 3px solid var(--calm-primary);
+    outline-offset: 4px;
+    /* Aumentei um pouco para não colar no elemento */
+    border-radius: 4px;
+}
+
+/* Preferência de Movimento Reduzido */
+@media (prefers-reduced-motion: reduce) {
+    *, ::before, ::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* Sr-Only (Leitores de Tela) */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+/* =========================================
+   5. CLASSES UTILITÁRIAS
+========================================= */
+.container {
+    width: 90%;
+    max-width: var(--container-width);
+    margin: 0 auto;
+}
